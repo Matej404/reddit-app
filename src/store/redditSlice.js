@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createSelector } from "@reduxjs/toolkit";
 
 const initialState = {
     posts: [],
@@ -13,7 +13,7 @@ const redditSlice = createSlice({
     initialState,
     reducers: {
         setSearchTerm(state, action) {
-            state.selectedSubReddit = action.payload;
+            state.searchTerm = action.payload;
         }
     }
 })
@@ -21,3 +21,15 @@ const redditSlice = createSlice({
 export const {setSearchTerm} = redditSlice.actions;
 
 export default redditSlice.reducer;
+
+const selectPosts = (state) => state.reddit.posts;
+const selectSearchTerm = (state) => state.reddit.searchTerm;
+
+export const selectedFilteredPosts = createSelector(
+    [selectPosts, selectSearchTerm],
+    (posts, searchTerm) => {
+        if(searchTerm !== "") {
+            return posts.filter((post) => post.title.toLowerCase().include(searchTerm.toLowerCase()))
+        }
+    }
+)

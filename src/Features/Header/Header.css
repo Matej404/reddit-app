@@ -14,9 +14,6 @@ header {
 .logo {
   font-weight: bold;
   padding: 8px 0;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1/2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,9 +27,6 @@ header {
 }
 
 .logo-icon {
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
   margin-right: 8px;
   font-size: 2rem;
 }

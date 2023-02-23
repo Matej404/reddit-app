@@ -11,7 +11,7 @@ header {
   .logo {
     font-weight: bold;
     padding: 8px 0;
-    grid-column: 1/2;
+    //grid-column: 1/2;
     display: flex;
     align-items: center;
     span {
@@ -20,7 +20,7 @@ header {
   }
 
   .logo-icon {
-    grid-column: 2/3;
+    //grid-column: 2/3;
     margin-right: 8px;
     font-size: 2rem;
   }

@@ -14,6 +14,7 @@ export default function Header() {
         setSearchTermLocal(e.target.value);
     }
 
+
     useEffect(() => {
         setSearchTermLocal(searchTerm)
     }, [searchTerm]);
@@ -38,9 +39,6 @@ export default function Header() {
                     <HiOutlineSearch />
                 </button>
             </form>
-            <div>
-                <h1>{searchTermLocal}</h1>
-            </div>
         </header>
     )
 }
