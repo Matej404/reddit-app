@@ -18,7 +18,7 @@ export default function Header() {
         setSearchTermLocal(searchTerm)
     }, [searchTerm]);
 
-    const onSearchTermSubmit = () => {
+    const onSearchTermSubmit = (e) => {
         e.preventDefault();
         dispatch(setSearchTerm(searchTermLocal))
     }
@@ -38,6 +38,9 @@ export default function Header() {
                     <HiOutlineSearch />
                 </button>
             </form>
+            <div>
+                <h1>{searchTermLocal}</h1>
+            </div>
         </header>
     )
 }
