@@ -28,6 +28,10 @@ const redditSlice = createSlice({
         setSearchTerm(state, action) {
             state.searchTerm = action.payload;
         },
+        setSelectedSubreddit(state, action) {
+            state.selectedSubReddit = action.payload;
+            state.searchTerm = "";
+        }, 
         startGetComments(state, action) {
             state.posts[action.payload].showingComments = !state.posts[action.payload].showingComments;
             if(!state.posts[action.payload].showingComments) {
@@ -52,6 +56,7 @@ export const {
     getPostsSuccess,
     getPostsFailed,
     setSearchTerm,
+    setSelectedSubreddit,
     startGetComments,
     getCommentsSuccess,
     getCommentFailed
@@ -90,6 +95,7 @@ export const fetchComments = (index, permalink) => async(dispatch) => {
 
 const selectPosts = (state) => state.reddit.posts;
 const selectSearchTerm = (state) => state.reddit.searchTerm;
+export const selectSelectedSubreddit = (state) => state.reddit.selectedSubReddit;
 
 export const selectFilteredPosts = createSelector(
     [selectPosts, selectSearchTerm],

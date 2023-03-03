@@ -15,7 +15,6 @@ export default function Home() {
     const { searchTerm, isLoading, error, selectedSubreddit } = reddit;
     const posts = useSelector(selectFilteredPosts);
     const dispatch = useDispatch();
-    console.log(posts)
 
     useEffect(() => {
       dispatch(fetchPosts(selectedSubreddit));
@@ -26,7 +25,7 @@ export default function Home() {
             dispatch(fetchComments(index, permalink))
         };
 
-        return getComments
+        return getComments;
     }
 
     if (isLoading) {
@@ -37,7 +36,7 @@ export default function Home() {
       );
     }
 
-    if (!error) {
+    if (error) {
         return (
           <div className="error">
             <h2>Failed to load posts.</h2>
