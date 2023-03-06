@@ -12,13 +12,13 @@ import PostLoading from "../Post/PostLoading";
 
 export default function Home() {
     const reddit = useSelector((state) => state.reddit);
-    const { searchTerm, isLoading, error, selectedSubreddit } = reddit;
+    const { searchTerm, isLoading, error, selectedSubReddit } = reddit;
     const posts = useSelector(selectFilteredPosts);
     const dispatch = useDispatch();
 
     useEffect(() => {
-      dispatch(fetchPosts(selectedSubreddit));
-    }, [selectedSubreddit]);
+      dispatch(fetchPosts(selectedSubReddit));
+    }, [selectedSubReddit]);
 
     const onToggleComments = (index) => {
         const getComments = (permalink) => {
@@ -42,7 +42,7 @@ export default function Home() {
             <h2>Failed to load posts.</h2>
             <button
               type="button"
-              onClick={() => dispatch(fetchPosts(selectedSubreddit))}
+              onClick={() => dispatch(fetchPosts(selectedSubReddit))}
             >
               Try again
             </button>
