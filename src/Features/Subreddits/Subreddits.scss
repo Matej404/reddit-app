@@ -1,5 +1,10 @@
 .subreddit-card {
     padding-right: 16px;
+    width: 25%;
+    height: 100%;
+    @media screen and(max-width: 600px) {
+      width: 100%;
+  }
   }
   
   .subreddit-card h2 {

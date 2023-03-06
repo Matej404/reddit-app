@@ -18,7 +18,6 @@ export default function Post(props)  {
   const [voteValue, setVoteValue] = useState(0);
 
   const { post, onToggleComments } = props;
-  console.log(post)
 
   const onHandleVote = (newValue) => {
     if (newValue === voteValue) {

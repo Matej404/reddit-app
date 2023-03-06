@@ -62,7 +62,7 @@ export default function Home() {
       }
 
     return(
-        <div>
+        <div className="home">
           {posts.map((post, index) => (
             <Post
                 key={post.id}

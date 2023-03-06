@@ -45,3 +45,4 @@ export const fetchSubreddits = () => async (dispatch) => {
 };
 
 export const selectSubreddits = (state) => state.subreddits.subreddits;
+
