@@ -62,7 +62,6 @@ export default function Post(props)  {
         </div>
       );
     }
-    
 
     if (post.loadingComments) {
       return (
@@ -75,7 +74,7 @@ export default function Post(props)  {
       );
     }
 
-    if (post.showingComments) {
+    if (!post.showingComments) {
       return (
         <div>
           {post.comments.map((comment) => (

@@ -49,6 +49,7 @@ export default function Home() {
           </div>
         );
       }
+      
 
       if (posts.length === 0) {
         return (
@@ -60,6 +61,7 @@ export default function Home() {
           </div>
         );
       }
+      
 
     return(
         <div className="home">
