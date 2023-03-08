@@ -7,8 +7,8 @@ const shortenNumber = (num, digits) => {
         if(num <= -decimal || num >= decimal) {
             return +(num / decimal).toFixed(digits) + units[i];
         }
-        return num;
     }
+    return num;
 }
 
 export default shortenNumber;

@@ -2,7 +2,6 @@ import React from "react";
 import "./Comment.css";
 import Avatar from "../Avatar/Avatar";
 import moment from "moment";
-import ReactMarkdown from "react-markdown";
 
 export default function Comment(props) {
     const { comment } = props;
@@ -16,7 +15,7 @@ export default function Comment(props) {
             {moment.unix(comment.created_utc).fromNow()}
           </p>
         </div>
-        <ReactMarkdown source={comment.body} />
+        <p>{comment.body}</p>
       </div>
     )
 }

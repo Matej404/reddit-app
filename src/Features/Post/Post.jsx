@@ -73,8 +73,9 @@ export default function Post(props)  {
         </div>
       );
     }
+    
 
-    if (!post.showingComments) {
+    if (post.showingComments) {
       return (
         <div>
           {post.comments.map((comment) => (
